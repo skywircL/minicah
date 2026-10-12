@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "function-repair",
+  "version": "1.0.0",
+  "split": "capability",
+  "tasks": [
+    {
+      "id": "repair-clamp",
+      "prompt": "Fix src/clamp.cjs. Export clamp(value, lower, upper) as a named CommonJS function. Return value bounded to the inclusive [lower, upper] range, keeping fractional values. Throw RangeError if lower > upper. Keep the CommonJS API. Do not run commands. Save your changes and briefly summarize.",
+      "tags": [
+        "coding",
+        "write",
+        "function-tests",
+        "boundaries"
+      ],
+      "files": {
+        "src/clamp.cjs": "exports.clamp = (value, lower, upper) => Math.min(lower, Math.max(upper, value));\n"
+      },
+      "graders": [
+        {
+          "id": "behavior",
+          "kind": "sandbox-test",
+          "testId": "function-repair/clamp"
+        }
+      ]
+    },
+    {
+      "id": "repair-median",
+      "prompt": "Fix src/median.cjs. Export median(values) as a named CommonJS function. Return the numeric median of a finite-number array: the middle value for odd lengths, or the mean of the middle two values for even lengths. Throw RangeError for an empty array. Keep the CommonJS API. Do not run commands. Save your changes and briefly summarize.",
+      "tags": [
+        "coding",
+        "write",
+        "function-tests",
+        "numeric-sort"
+      ],
+      "files": {
+        "src/median.cjs": "exports.median = values => { const sorted = [...values].sort(); return sorted[Math.floor(sorted.length / 2)]; };\n"
+      },
+      "graders": [
+        {
+          "id": "behavior",
+          "kind": "sandbox-test",
+          "testId": "function-repair/median"
+        }
+      ]
+    }
+  ]
+}

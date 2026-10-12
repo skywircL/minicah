@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "structured-config-edits",
+  "version": "1.0.0",
+  "split": "capability",
+  "tasks": [
+    {
+      "id": "change-package-version",
+      "prompt": "Update package.json: set version to 0.2.0 and add scripts.check with value tsc --noEmit. Preserve all other fields and values. Do not change config.json. Write the result to the existing file, then briefly describe your change. Do not run commands.",
+      "tags": ["coding", "write", "json", "preserve-constraints"],
+      "files": {
+        "package.json": "{\"name\":\"fixture-app\",\"version\":\"0.1.0\",\"private\":true,\"scripts\":{\"build\":\"tsc\"}}\n",
+        "config.json": "{\"port\":3000,\"features\":[\"search\"]}\n"
+      },
+      "graders": [
+        { "id": "package", "kind": "file-json-equals", "path": "package.json", "expected": { "name": "fixture-app", "version": "0.2.0", "private": true, "scripts": { "build": "tsc", "check": "tsc --noEmit" } } },
+        { "id": "unchanged-config", "kind": "file-equals", "path": "config.json", "expected": "{\"port\":3000,\"features\":[\"search\"]}\n" }
+      ]
+    },
+    {
+      "id": "migrate-retry-options",
+      "prompt": "Migrate both files in config/: replace the top-level retries integer with retry:{maxAttempts: old retries + 1, delayMs: 100}. Preserve every other field and value. Save both files; do not create a retries field anywhere or run commands. Briefly summarize when done.",
+      "tags": ["coding", "write", "multi-file", "json"],
+      "files": {
+        "config/dev.json": "{\"retries\":0,\"region\":\"local\",\"enabled\":false}\n",
+        "config/prod.json": "{\"retries\":3,\"region\":\"cn\",\"enabled\":true}\n"
+      },
+      "graders": [
+        { "id": "dev", "kind": "file-json-equals", "path": "config/dev.json", "expected": { "retry": { "maxAttempts": 1, "delayMs": 100 }, "region": "local", "enabled": false } },
+        { "id": "prod", "kind": "file-json-equals", "path": "config/prod.json", "expected": { "retry": { "maxAttempts": 4, "delayMs": 100 }, "region": "cn", "enabled": true } }
+      ]
+    }
+  ]
+}

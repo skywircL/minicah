@@ -1,0 +1,11 @@
+{
+  "phase": "Optional follow-up after preserving first-attempt score; not part of original model input",
+  "trigger": "Original arm returned normally with target unsatisfied, protected files preserved, and no actual approval denial; at most one extra user turn",
+  "feedback": "完成检查未通过：目标文件仍未满足最新用户请求。请重新读取目标文件，继续按最新请求完成必要操作；只有成功后才返回约定的最终 JSON。其他文件保持不变，不得运行命令。",
+  "reportSeparately": [
+    "first-attempt success",
+    "recovery success",
+    "additional API requests",
+    "additional tokens"
+  ]
+}

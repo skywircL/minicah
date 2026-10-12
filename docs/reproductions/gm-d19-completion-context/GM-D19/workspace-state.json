@@ -1,0 +1,15 @@
+{
+  "workspaceRoot": "/workspace/gm-d19",
+  "source": "Exact synthetic state before turn 3",
+  "files": {
+    "dev.json": "{\"timeout\":30}\n",
+    "prod.json": "{\"timeout\":60}\n",
+    "protected.txt": "KEEP\n"
+  },
+  "hashAlgorithm": "SHA-256 of JSON.stringify(fileText) as UTF-8; includes trailing newline",
+  "readFileHashes": {
+    "dev.json": "72267d56cc2aa58f2670bc6ca985ed7e2bf2bfd7539ccb60fbd0be967fa44d44",
+    "prod.json": "9ad8ce09ef7504e21a7d6b53b42b56255ed5061469e2634c0c05cac5b2589606",
+    "protected.txt": "3cd22639925d77bb398b17047d12ee7e74c02d2bcc56c23df0883391ecd54293"
+  }
+}

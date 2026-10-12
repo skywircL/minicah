@@ -1,0 +1,15 @@
+{
+  "workspaceRoot": "/workspace/gm-d04",
+  "source": "Exact synthetic state before turn 3",
+  "files": {
+    "dev.json": "{\"port\":4100}\n",
+    "prod.json": "{\"port\":80}\n",
+    "protected.txt": "KEEP\n"
+  },
+  "hashAlgorithm": "SHA-256 of JSON.stringify(fileText) as UTF-8; includes trailing newline",
+  "readFileHashes": {
+    "dev.json": "9d69b5bfd0c741834e5b37594aee4686ceac9f089cdf2f30921324bd188cc2ff",
+    "prod.json": "9bf5a8073b6859b84f2746ed429a5adb8458cec97254a3c9410e5682c4d3a435",
+    "protected.txt": "3cd22639925d77bb398b17047d12ee7e74c02d2bcc56c23df0883391ecd54293"
+  }
+}

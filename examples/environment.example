@@ -1,0 +1,13 @@
+# Copy to .env and fill only the provider keys you use. Never commit a real key.
+# Direct DeepSeek (default), or --provider pi --pi-provider deepseek
+DEEPSEEK_API_KEY=
+# --provider pi --pi-provider openai
+OPENAI_API_KEY=
+# --provider pi --pi-provider anthropic
+ANTHROPIC_API_KEY=
+# --provider pi --pi-provider google (GOOGLE_API_KEY is also accepted)
+GEMINI_API_KEY=
+OPENROUTER_API_KEY=
+XAI_API_KEY=
+GROQ_API_KEY=
+MISTRAL_API_KEY=

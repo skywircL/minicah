@@ -1,0 +1,352 @@
+{
+  "original": {
+    "endpoint": "https://api.deepseek.com",
+    "model": "deepseek-flash",
+    "thinking": false,
+    "maxOutputTokens": 4096,
+    "timeoutMs": 120000,
+    "maxResponseBytes": 1048576,
+    "contextWindow": 1000000
+  },
+  "temperature": "not explicitly set; provider default",
+  "seed": "not set",
+  "tool_choice": "not explicitly set; provider default",
+  "response_format": "not set; the JSON requirement was prompt-only",
+  "sdkRetries": 0,
+  "trialTimeoutMs": 120000,
+  "perPhaseDiagnosticRequestCap": 12,
+  "originalStudy": {
+    "repetitions": 8,
+    "concurrency": 1,
+    "order": [
+      {
+        "arm": "full-history",
+        "repetition": 1
+      },
+      {
+        "arm": "explicit-actions",
+        "repetition": 1
+      },
+      {
+        "arm": "both-wording",
+        "repetition": 1
+      },
+      {
+        "arm": "remove-completed-history",
+        "repetition": 1
+      },
+      {
+        "arm": "original",
+        "repetition": 1
+      },
+      {
+        "arm": "final-after-action",
+        "repetition": 1
+      },
+      {
+        "arm": "full-history",
+        "repetition": 2
+      },
+      {
+        "arm": "explicit-actions",
+        "repetition": 2
+      },
+      {
+        "arm": "both-wording",
+        "repetition": 2
+      },
+      {
+        "arm": "final-after-action",
+        "repetition": 2
+      },
+      {
+        "arm": "original",
+        "repetition": 2
+      },
+      {
+        "arm": "remove-completed-history",
+        "repetition": 2
+      },
+      {
+        "arm": "full-history",
+        "repetition": 3
+      },
+      {
+        "arm": "both-wording",
+        "repetition": 3
+      },
+      {
+        "arm": "final-after-action",
+        "repetition": 3
+      },
+      {
+        "arm": "explicit-actions",
+        "repetition": 3
+      },
+      {
+        "arm": "original",
+        "repetition": 3
+      },
+      {
+        "arm": "remove-completed-history",
+        "repetition": 3
+      },
+      {
+        "arm": "explicit-actions",
+        "repetition": 4
+      },
+      {
+        "arm": "both-wording",
+        "repetition": 4
+      },
+      {
+        "arm": "remove-completed-history",
+        "repetition": 4
+      },
+      {
+        "arm": "original",
+        "repetition": 4
+      },
+      {
+        "arm": "final-after-action",
+        "repetition": 4
+      },
+      {
+        "arm": "full-history",
+        "repetition": 4
+      },
+      {
+        "arm": "both-wording",
+        "repetition": 5
+      },
+      {
+        "arm": "original",
+        "repetition": 5
+      },
+      {
+        "arm": "remove-completed-history",
+        "repetition": 5
+      },
+      {
+        "arm": "final-after-action",
+        "repetition": 5
+      },
+      {
+        "arm": "explicit-actions",
+        "repetition": 5
+      },
+      {
+        "arm": "full-history",
+        "repetition": 5
+      },
+      {
+        "arm": "original",
+        "repetition": 6
+      },
+      {
+        "arm": "both-wording",
+        "repetition": 6
+      },
+      {
+        "arm": "explicit-actions",
+        "repetition": 6
+      },
+      {
+        "arm": "remove-completed-history",
+        "repetition": 6
+      },
+      {
+        "arm": "full-history",
+        "repetition": 6
+      },
+      {
+        "arm": "final-after-action",
+        "repetition": 6
+      },
+      {
+        "arm": "both-wording",
+        "repetition": 7
+      },
+      {
+        "arm": "remove-completed-history",
+        "repetition": 7
+      },
+      {
+        "arm": "full-history",
+        "repetition": 7
+      },
+      {
+        "arm": "original",
+        "repetition": 7
+      },
+      {
+        "arm": "explicit-actions",
+        "repetition": 7
+      },
+      {
+        "arm": "final-after-action",
+        "repetition": 7
+      },
+      {
+        "arm": "final-after-action",
+        "repetition": 8
+      },
+      {
+        "arm": "both-wording",
+        "repetition": 8
+      },
+      {
+        "arm": "explicit-actions",
+        "repetition": 8
+      },
+      {
+        "arm": "full-history",
+        "repetition": 8
+      },
+      {
+        "arm": "original",
+        "repetition": 8
+      },
+      {
+        "arm": "remove-completed-history",
+        "repetition": 8
+      }
+    ]
+  },
+  "followupStudy": {
+    "concurrency": 1,
+    "order": [
+      {
+        "caseId": "GM-D19",
+        "arm": "action-precondition-only",
+        "repetition": 1
+      },
+      {
+        "caseId": "GM-D04",
+        "arm": "original",
+        "repetition": 1
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "original",
+        "repetition": 1
+      },
+      {
+        "caseId": "GM-D04",
+        "arm": "final-after-action",
+        "repetition": 1
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "final-scope-only",
+        "repetition": 1
+      },
+      {
+        "caseId": "GM-D04",
+        "arm": "final-after-action",
+        "repetition": 2
+      },
+      {
+        "caseId": "GM-D04",
+        "arm": "original",
+        "repetition": 2
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "final-scope-only",
+        "repetition": 2
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "original",
+        "repetition": 2
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "action-precondition-only",
+        "repetition": 2
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "original",
+        "repetition": 3
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "final-scope-only",
+        "repetition": 3
+      },
+      {
+        "caseId": "GM-D04",
+        "arm": "original",
+        "repetition": 3
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "action-precondition-only",
+        "repetition": 3
+      },
+      {
+        "caseId": "GM-D04",
+        "arm": "final-after-action",
+        "repetition": 3
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "final-scope-only",
+        "repetition": 4
+      },
+      {
+        "caseId": "GM-D04",
+        "arm": "original",
+        "repetition": 4
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "original",
+        "repetition": 4
+      },
+      {
+        "caseId": "GM-D04",
+        "arm": "final-after-action",
+        "repetition": 4
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "action-precondition-only",
+        "repetition": 4
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "action-precondition-only",
+        "repetition": 5
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "original",
+        "repetition": 5
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "final-scope-only",
+        "repetition": 5
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "final-scope-only",
+        "repetition": 6
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "action-precondition-only",
+        "repetition": 6
+      },
+      {
+        "caseId": "GM-D19",
+        "arm": "original",
+        "repetition": 6
+      }
+    ]
+  },
+  "portability": "model-input.json contains messages/tools only. Configure your selected provider/model separately; do not blindly copy DeepSeek-specific thinking/stream fields to another provider. Record all parameter differences."
+}

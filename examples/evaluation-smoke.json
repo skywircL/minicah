@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "uppercase-read-smoke",
+  "version": "1.0.0",
+  "split": "regression",
+  "tasks": [
+    {
+      "id": "single-line",
+      "prompt": "Read input.txt in the workspace. Return its text in uppercase, trimming leading and trailing whitespace. Output only the transformed text.",
+      "tags": ["smoke", "read-only"],
+      "files": { "input.txt": "hello minicah\n" },
+      "graders": [{ "id": "answer", "kind": "text-equals", "expected": "HELLO MINICAH" }]
+    },
+    {
+      "id": "multiple-lines",
+      "prompt": "Read input.txt in the workspace. Return its text in uppercase, trimming leading and trailing whitespace. Preserve internal line breaks and output only the transformed text.",
+      "tags": ["smoke", "read-only"],
+      "files": { "input.txt": "  alpha\nbeta  \n" },
+      "graders": [{ "id": "answer", "kind": "text-equals", "expected": "ALPHA\nBETA" }]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "sourceReportHash": "38f93b90fe8d12cae304a7adfb6a9691aab78cbe7fc3c7bc41348f1c469a2153",
+  "cases": 51,
+  "loadedTrials": 317,
+  "failedTrials": 120,
+  "verifiedSourceFiles": 450,
+  "htmlSha256": "306b2c4b495c5186414f2073f6e1f95cd289073ef078e2eb159ac86ed19c22cd"
+}

@@ -1,0 +1,226 @@
+[
+  {
+    "id": "agent-approved-edit",
+    "file": "test/agent.test.ts",
+    "name": "SDK → concurrent native tools → approved edit → final answer; replay only rebuilds context",
+    "expectedState": "并发工具之后的写入必须经批准；重放只重建上下文。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "native-bounded-dispatch",
+    "file": "test/tool-pipeline.test.ts",
+    "name": "native model batches execute concurrently with bounded scheduling and atomic reservations",
+    "expectedState": "同批 Native 工具受有界并发与原子用量预留约束。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "approval-single-use",
+    "file": "test/permissions.test.ts",
+    "name": "approved replies are single-use and consumption checks current arguments, workspace, and generation",
+    "expectedState": "审批凭据只能消费一次，参数、工作区和代际必须匹配。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "approval-revocation",
+    "file": "test/permissions.test.ts",
+    "name": "policy changes, replacement calls, and expiry revoke pending and already-approved requests",
+    "expectedState": "策略改变、替换调用和过期撤销待决及已批准请求。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "recovery-call-states",
+    "file": "test/session-recovery.test.ts",
+    "name": "recovery distinguishes complete, not-started, and uncertain calls without executing anything",
+    "expectedState": "恢复区分已完成、未开始和不确定调用，恢复本身不执行工具。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "uncertain-side-effect",
+    "file": "test/session-recovery.test.ts",
+    "name": "external success plus local result-commit failure remains uncertain and is never retried",
+    "expectedState": "外部成功而本地结果提交失败时保留不确定态，不自动重试。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "compaction-preserves-constraints",
+    "file": "test/session-context.test.ts",
+    "name": "compression preserves constraints, protected information, task state, and the original journal",
+    "expectedState": "压缩保留约束、受保护信息、任务状态及原始日志。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "usage-does-not-impose-quota",
+    "file": "test/agent.test.ts",
+    "name": "more than twenty model requests and one million tokens do not stop a run",
+    "expectedState": "累计请求数和 token 消耗只计量，不因旧累计额度终止任务。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "late-approval-cancelled",
+    "file": "test/agent.test.ts",
+    "name": "pending approvals can be cancelled; a late allow cannot dispatch the write",
+    "expectedState": "已取消审批收到迟到允许回复也不得执行写入。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "l1-run-snapshot",
+    "file": "test/hot-reload.test.ts",
+    "name": "L1 validates schemas and changes only subsequent run snapshots without draining",
+    "expectedState": "L1 先校验配置，已存在 run 保留其快照。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "l2-generation-pair",
+    "file": "test/hot-reload.test.ts",
+    "name": "L2 stages registrations before blocking, acquires after drain, and pairs schema with execute generation",
+    "expectedState": "L2 在 drain 后切换，schema 与执行实现属于同一代际。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "scoped-caller-view",
+    "file": "test/registry.test.ts",
+    "name": "tools share a pinned caller view across services and handlers, with parent inheritance and sibling isolation",
+    "expectedState": "服务及工具处理器共享固定调用方目录视图，保留父继承与兄弟隔离。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "native-ptc-scoped-view",
+    "file": "test/registry.test.ts",
+    "name": "native and PTC use scoped schemas and implementations; one Session can retain distinct same-name providers",
+    "expectedState": "Native/PTC 使用相同 scoped schema 和实现绑定，同 Session 可保留同名不同 provider。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "ptc-partial-failure",
+    "file": "test/ptc.test.ts",
+    "name": "partial results survive program failure and the whole program is never automatically replayed",
+    "expectedState": "PTC 部分结果在程序失败后保留，整段程序不自动重放。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "automatic-summary-commit",
+    "file": "test/agent.test.ts",
+    "name": "automatic summary commits a smaller surface, retains constraints and accounts for the auxiliary request",
+    "expectedState": "自动摘要提交更小上下文，保留约束并计入辅助请求用量。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "sandbox-cleanup-uncertain",
+    "file": "test/sandbox-ptc.test.ts",
+    "name": "a successful PTC result cannot hide unconfirmed sandbox cleanup",
+    "expectedState": "程序成功不覆盖清理未确认，结果须保持 unknown。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "workspace-conflict",
+    "file": "test/agent.test.ts",
+    "name": "workspace tools reject stale hashes, protected paths and symlinks",
+    "expectedState": "拒绝过期hash、受保护路径及符号链接写入。",
+    "source": "docs/coding-agent.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "intent-before-effect",
+    "file": "test/session-recovery.test.ts",
+    "name": "tool execution cannot start until its fsync intent commit succeeds",
+    "expectedState": "意图提交失败时副作用次数为0。",
+    "source": "docs/session.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "context-after-restart",
+    "file": "test/session-context.test.ts",
+    "name": "Session and Context plugins survive Runtime restart, isolate sessions, and use unique run ids",
+    "expectedState": "跨重启保留上下文，各会话独立。",
+    "source": "docs/session.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "incomplete-batch",
+    "file": "test/session-surface.test.ts",
+    "name": "model/tool batches cannot be hidden until every child is settled, including unplanned children",
+    "expectedState": "任何子调用未结算时不得隐藏整个批次。",
+    "source": "docs/session.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "stale-summary",
+    "file": "test/session-surface.test.ts",
+    "name": "stale compaction candidates cannot replace a changed surface or omit new constraints",
+    "expectedState": "并发改变后拒绝过期摘要。",
+    "source": "docs/session.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "preflight",
+    "file": "test/lifecycle.test.ts",
+    "name": "preflight rejects invalid graphs before any setup",
+    "expectedState": "无效依赖图在setup前拒绝。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "cleanup-aggregation",
+    "file": "test/lifecycle.test.ts",
+    "name": "cleanup failures are aggregated while all other resources still close",
+    "expectedState": "单个清理失败不阻止其他资源释放。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "service-isolation",
+    "file": "test/isolation.test.ts",
+    "name": "multiple mounts keep the same contract while provider caches, consumers and tool callbacks resolve by realm",
+    "expectedState": "同契约多实例解析正确且互不串用。",
+    "source": "docs/service-isolation.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "skill-scope",
+    "file": "test/registry.test.ts",
+    "name": "skill summaries, bodies and resources resolve one immutable nearest-layer definition",
+    "expectedState": "Skill摘要正文与资源来自同一可见版本。",
+    "source": "docs/scoped-registries.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "usage-unknown",
+    "file": "test/observability.test.ts",
+    "name": "missing usage and unfinished calls stay unknown instead of zero consumption or successful completion",
+    "expectedState": "未知用量不伪造为0，未结束调用不报告成功。",
+    "source": "README.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "cancel-admission",
+    "file": "test/sandbox-ptc.test.ts",
+    "name": "shared sandbox cancellation closes PTC input admission immediately",
+    "expectedState": "取消后停止接收新PTC调用。",
+    "source": "docs/tool-pipeline.md",
+    "kind": "engineering-contract"
+  },
+  {
+    "id": "snapshot-filter",
+    "file": "test/sandbox-workspace.test.ts",
+    "name": "sandbox workspace copies binary/source files with readable modes and excludes credentials at every depth",
+    "expectedState": "副本不含凭据路径，原工作区不被改写。",
+    "source": "docs/tool-pipeline.md",
+    "kind": "engineering-contract"
+  }
+]

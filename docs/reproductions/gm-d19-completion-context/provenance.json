@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-03T13:34:43.876Z",
+  "sourceRefs": [
+    {
+      "caseId": "GM-D19",
+      "journalRelativeToRepo": ".minicah/gold-expansion-baselines/baseline-FxEhmE/GM-D19-1/sessions/f2bede15ba81175139f40b6e124266f904f3d429695b4102f3c65714c1fef54c.jsonl",
+      "journalSHA256": "34a4fd65e9ca95345d9f604641e2237c1219ffc195335f09b8380f2603301efe",
+      "canonicalOriginalRequestHash": "15e4387d6d9a6785cb1cb55d93f2caa3362d6321602cb34a7f3dd3f7548b078e",
+      "portableWorkspaceRoot": "/workspace/gm-d19"
+    },
+    {
+      "caseId": "GM-D04",
+      "journalRelativeToRepo": ".minicah/gold-expansion-baselines/baseline-FxEhmE/GM-D04-1/sessions/f2bede15ba81175139f40b6e124266f904f3d429695b4102f3c65714c1fef54c.jsonl",
+      "journalSHA256": "1bd217ad1c17280f2ad64060118943a585420fec3ce3438963d23d0e7f3eef4b",
+      "canonicalOriginalRequestHash": "601a26bf173a120f66b01500fa97f7e78b9636ce7fcecad51698969a2b5cd479",
+      "portableWorkspaceRoot": "/workspace/gm-d04"
+    }
+  ],
+  "normalization": "Exact requests retain original local paths. Portable messages change only the matching workspace absolute path; model-input has only messages and tools. Complete source history contains historical tool-call ids/results preserved as-is.",
+  "containsCredentials": false,
+  "apiCalledForThisExport": false
+}

@@ -1,0 +1,45 @@
+{
+  "name": "minicah",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A small plugin-oriented coding agent harness kernel",
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    }
+  },
+  "scripts": {
+    "agent": "npm run build && node dist/src/cli/main.js",
+    "eval": "npm run build && node dist/src/evaluation/cli.js",
+    "observe": "npm run build && node dist/src/observability/cli.js",
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "demo": "npm run build && node dist/examples/demo.js",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "demo:pipeline": "npm run build && node dist/examples/tool-pipeline.js",
+    "gt:build": "npm run build && node scripts/ground-truth/build.mjs",
+    "gt:calibrate": "npm run build && node scripts/ground-truth/calibrate.mjs",
+    "gt:harness": "npm run build && node scripts/ground-truth/harness.mjs",
+    "gt:audit": "node scripts/ground-truth/audit.mjs",
+    "gt:test": "npm run build && node --test dist/test/evaluation-ground-truth.test.js scripts/ground-truth/audit.test.mjs",
+    "gold:build": "npm run build && node scripts/gold-seeds/build.mjs",
+    "gold:calibrate": "npm run build && node scripts/gold-seeds/calibrate.mjs",
+    "gold:audit": "node scripts/gold-seeds/audit.mjs",
+    "gold:test": "npm run build && node --test scripts/gold-seeds/gold.test.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0"
+  },
+  "dependencies": {
+    "@earendil-works/pi-ai": "1.0.2",
+    "ajv": "^8.20.0",
+    "chokidar": "^4.0.3",
+    "openai": "^6.49.0"
+  }
+}

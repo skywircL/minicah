@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "plugins": {
+    "deepseek-model": {
+      "config": { "maxOutputTokens": 8192 }
+    },
+    "context-compaction": {
+      "config": { "auto": true }
+    }
+  }
+}

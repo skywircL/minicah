@@ -1,0 +1,147 @@
+[
+  {
+    "function": {
+      "description": "List workspace files. Skips dependencies, generated output, credentials and metadata.",
+      "name": "list_files",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "maxLength": 4096,
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    },
+    "type": "function"
+  },
+  {
+    "function": {
+      "description": "Read UTF-8 text and its full-file content hash. Use the hash for edits.",
+      "name": "read_file",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "lineCount": {
+            "maximum": 300,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "path": {
+            "maxLength": 4096,
+            "type": "string"
+          },
+          "startLine": {
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "type": "object"
+      }
+    },
+    "type": "function"
+  },
+  {
+    "function": {
+      "description": "Search literal text in bounded UTF-8 workspace files. No regular expressions.",
+      "name": "search_text",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "maxLength": 4096,
+            "type": "string"
+          },
+          "query": {
+            "maxLength": 1024,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      }
+    },
+    "type": "function"
+  },
+  {
+    "function": {
+      "description": "Create/replace a file. expectedHash=null creates only; otherwise use the hash from read_file. Requires approval.",
+      "name": "write_file",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "content": {
+            "maxLength": 524288,
+            "type": "string"
+          },
+          "expectedHash": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "path": {
+            "maxLength": 4096,
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "content",
+          "expectedHash"
+        ],
+        "type": "object"
+      }
+    },
+    "type": "function"
+  },
+  {
+    "function": {
+      "description": "Replace exactly one literal occurrence in an existing file using its read_file hash. Requires approval.",
+      "name": "edit_file",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "expectedHash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "newText": {
+            "maxLength": 524288,
+            "type": "string"
+          },
+          "oldText": {
+            "maxLength": 524288,
+            "minLength": 1,
+            "type": "string"
+          },
+          "path": {
+            "maxLength": 4096,
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "oldText",
+          "newText",
+          "expectedHash"
+        ],
+        "type": "object"
+      }
+    },
+    "type": "function"
+  }
+]
